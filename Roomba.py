@@ -3,7 +3,7 @@ import serial
 import time
 
 class Roomba:
-    def __init__(self, port='/dev/ttyAMA0', baudrate=57600, DD_pin):
+    def __init__(self, port = '/dev/ttyAMA0', baudrate = 57600, DD_pin = 17):
         self.port = port
         self.baudrate = baudrate
         self.DD_pin = DD_pin
