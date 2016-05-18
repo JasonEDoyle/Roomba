@@ -4,7 +4,7 @@ import Roomba
 
 if __name__ == '__main__':
 
-    roomba = Roomba(DD_pin = 17)
+    roomba = Roomba.Roomba(DD_pin = 17)
 
     roomba.wake_roomba()
     roomba.start()
