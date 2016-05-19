@@ -21,9 +21,18 @@ class Roomba:
  
     def start(self):
         self.ser.write(bytes([128]))
+        time.sleep(0.02)
 
     def sensors(self):
+        self.ser.flushInput()
+
         self.ser.write(bytes([142,0]))
+
+
+#        sensors = []
+        sensors = self.ser.read(26)
+
+        return sensors
 
     def shutdown(self):
         self.ser.close()
