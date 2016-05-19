@@ -9,9 +9,14 @@ if __name__ == '__main__':
 
     roomba.wake_roomba()
     roomba.start()
-    sensors = roomba.sensors()
 
-    print(sensors)
+    roomba.control()
+    roomba.spot()
+#    roomba.power_down()
+
+#    sensors = roomba.sensors()
+
+#    print(sensors)
 
     roomba.shutdown()
 
