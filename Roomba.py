@@ -23,7 +23,7 @@ class Roomba:
         self.ser.write(bytes([128]))
 
     def sensors(self):
-        self.ser.write(bytes([132,1]))
+        self.ser.write(bytes([142,0]))
 
     def shutdown(self):
         self.ser.close()
