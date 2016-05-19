@@ -27,11 +27,11 @@ class Roomba:
 
 
     def sensors(self):
-        self.ser.flushInput()
+        #self.ser.flushInput()
 
         self.ser.write(bytes([142,0]))
 
-#        sensors = []
+        #sensors = []
         sensors = self.ser.read(26)
 
         return sensors
