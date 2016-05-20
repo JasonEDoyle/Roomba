@@ -10,6 +10,9 @@ class Roomba:
 
         self.ser = serial.Serial(port, baudrate, timeout = 0.1)
 
+        if not self.ser.is_open:
+            self.ser.open()
+
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(DD_pin, GPIO.OUT)
 
@@ -23,13 +26,13 @@ class Roomba:
  
     def start(self):
         self.ser.write(bytes([128]))
-        time.sleep(0.05)
+        #time.sleep(0.05)
 
 
     def sensors(self):
         #self.ser.flushInput()
 
-        self.ser.write(bytes([142,0]))
+        self.ser.write(bytes([128,142,1]))
 
         #sensors = []
         sensors = self.ser.read(26)
@@ -48,7 +51,7 @@ class Roomba:
 
 
     def power_down(self):
-        # posers off roomba must be in safe or full mode
+        # powers off roomba must be in safe or full mode
         self.ser.write(bytes([133]))
 
 
